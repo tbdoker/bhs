@@ -13,5 +13,12 @@ export const REFERENCES = [
   { name: "Keller Williams Türkiye", src: "/refs/kw.png", w: 1200, h: 405, strip: 40, tile: 17 },
 ];
 
-/** Replace with the real number (country code, no plus or spaces) once it is set up. */
-export const WHATSAPP_URL = "https://wa.me/905000000000";
+/** Company contact details, used by the footer, the Contact page and every WhatsApp button. */
+export const CONTACT = {
+  email: "info@bhspackaging.com",
+  phone: "+90 545 264 65 89",
+  phoneHref: "tel:+905452646589",
+  instagram: "@bhs.packaging",
+  instagramUrl: "https://www.instagram.com/bhs.packaging/",
+};
+export const WHATSAPP_URL = "https://wa.me/905452646589";

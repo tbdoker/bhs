@@ -17,7 +17,7 @@ const tr: Dictionary = {
   },
   footer: {
     tagline: "Kağıt, baskı ve ambalaj.", pages: "Sayfalar", contact: "İletişim",
-    email: "[E-posta]", phone: "[Telefon]", address: "[Adres], İstanbul",
+    address: "[Adres], İstanbul",
     legal: "Yasal", privacy: "KVKK Aydınlatma Metni", cookies: "Çerez tercihleri",
   },
   home: {
@@ -109,7 +109,8 @@ const tr: Dictionary = {
     topic: "Konu", topics: ["Teklif almak istiyorum", "Numune talebi", "Genel bilgi"],
     message: "Mesajınız", kvkkBefore: "", kvkkLink: "KVKK Aydınlatma Metni", kvkkAfter: "'ni okudum, bilgilerimin bu talep için işlenmesini kabul ediyorum.",
     send: "Gönder", thanksTitle: "Mesajınız ulaştı.", thanksSub: "En kısa sürede size dönüş yapacağız.", again: "Yeni mesaj yaz",
-    info: [["E-posta", "[E-posta adresi]"], ["Telefon", "[Telefon numarası]"], ["Adres", "[Adres], İstanbul"], ["Çalışma saatleri", "[Saatler]"]],
+    labels: { email: "E-posta", phone: "Telefon", instagram: "Instagram" },
+    info: [["Adres", "[Adres], İstanbul"], ["Çalışma saatleri", "[Saatler]"]],
     whatsapp: "WhatsApp'tan yazın", map: "Harita · konum eklenecek",
   },
 };

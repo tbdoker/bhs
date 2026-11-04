@@ -10,7 +10,7 @@ type Meta = { title: string; description: string };
 export interface Dictionary {
   meta: { siteName: string } & Record<"home" | "about" | "production" | "products" | "references" | "contact", Meta>;
   nav: { about: string; production: string; products: string; references: string; contact: string; menu: string; open: string; close: string; language: string };
-  footer: { tagline: string; pages: string; contact: string; email: string; phone: string; address: string; legal: string; privacy: string; cookies: string };
+  footer: { tagline: string; pages: string; contact: string; address: string; legal: string; privacy: string; cookies: string };
   home: {
     videoLabel: string; scroll: string; tagline: string;
     eyebrow: string; titleA: string; titleB: string; sub: string; hint: string;
@@ -39,6 +39,7 @@ export interface Dictionary {
     eyebrow: string; titleA: string; titleB: string; formTitle: string;
     name: string; company: string; email: string; phone: string; topic: string; topics: string[]; message: string;
     kvkkBefore: string; kvkkLink: string; kvkkAfter: string;
-    send: string; thanksTitle: string; thanksSub: string; again: string; info: Pair[]; whatsapp: string; map: string;
+    send: string; thanksTitle: string; thanksSub: string; again: string;
+    labels: { email: string; phone: string; instagram: string }; info: Pair[]; whatsapp: string; map: string;
   };
 }

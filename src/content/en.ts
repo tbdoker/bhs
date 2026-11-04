@@ -17,7 +17,7 @@ const en: Dictionary = {
   },
   footer: {
     tagline: "Paper, print and packaging.", pages: "Pages", contact: "Contact",
-    email: "[Email]", phone: "[Phone]", address: "[Address], Istanbul",
+    address: "[Address], Istanbul",
     legal: "Legal", privacy: "Privacy notice", cookies: "Cookie preferences",
   },
   home: {
@@ -25,13 +25,13 @@ const en: Dictionary = {
     eyebrow: "BHS Paper & Print", titleA: "Feel it", titleB: "without touching.",
     sub: "The grain of the paper, the flash of foil, the shadow of an emboss. Discover it all on screen first, then hold it in your hands.",
     hint: "Move your cursor across the card and watch the light travel over the foil.",
-    cardLabel: "Black business card with hot foil printing", cardName: "Ali Kaya", cardTitle: "Creative Director",
+    cardLabel: "Black business card with hot foil printing", cardName: "BHS", cardTitle: "CEO",
     lineEyebrow: "Products", lineTitle: "From idea to object.", allProducts: "All products",
     families: [
       ["Business cards", "A first impression you can hold."],
       ["Packaging", "Opening it is an experience."],
-      ["Catalogs & books", "Impressive, page after page."],
-      ["Stationery", "Your identity on every envelope."],
+      ["Catalogs & Brochures", "Impressive, page after page."],
+      ["Letterhead & Notepads", "Your identity on every envelope."],
       ["Labels", "Small, but impossible to miss."],
     ],
     finEyebrow: "Finishing", finA: "Prints that", finB: "catch the light.",
@@ -109,7 +109,8 @@ const en: Dictionary = {
     topic: "Subject", topics: ["I'd like a quote", "Sample request", "General enquiry"],
     message: "Your message", kvkkBefore: "I have read the ", kvkkLink: "privacy notice", kvkkAfter: " and agree to my details being processed for this request.",
     send: "Send", thanksTitle: "Your message is on its way.", thanksSub: "We'll get back to you as soon as possible.", again: "Write another message",
-    info: [["Email", "[Email address]"], ["Phone", "[Phone number]"], ["Address", "[Address], Istanbul"], ["Opening hours", "[Hours]"]],
+    labels: { email: "Email", phone: "Phone", instagram: "Instagram" },
+    info: [["Address", "[Address], Istanbul"], ["Opening hours", "[Hours]"]],
     whatsapp: "Message us on WhatsApp", map: "Map · location to be added",
   },
 };

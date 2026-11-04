@@ -50,7 +50,7 @@ Anything in `[square brackets]` is a placeholder (email, phone, address, figures
 Other things you'll want to edit:
 
 - **Reference logos:** `REFERENCES` in `src/content/index.ts`, files in `public/refs/`. Each logo has its own size (`strip` for the homepage band, `tile` for the References page) so heavy and light logos look balanced.
-- **WhatsApp number:** `WHATSAPP_URL` in `src/content/index.ts`.
+- **Email, phone, Instagram and WhatsApp:** `CONTACT` and `WHATSAPP_URL` in `src/content/index.ts` (used by the footer, the Contact page and every WhatsApp button).
 - **Hero film:** `public/media/hero-film.mp4` and its still frame `hero-poster.jpg`. Keep it dark, silent, 15–25 s, and a few MB.
 
 ## Contact form

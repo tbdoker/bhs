@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Logo from "./Logo";
 import { href, type Locale, type PageKey } from "@/content/routes";
-import { getDictionary } from "@/content";
+import { CONTACT, getDictionary } from "@/content";
 
 const PAGES: PageKey[] = ["about", "production", "products", "references", "contact"];
 
@@ -22,8 +22,9 @@ export default function Footer({ locale }: { locale: Locale }) {
           </nav>
           <div className="site-footer__col">
             <h2>{t.contact}</h2>
-            <span>{t.email}</span>
-            <span>{t.phone}</span>
+            <a href={`mailto:${CONTACT.email}`}>{CONTACT.email}</a>
+            <a href={CONTACT.phoneHref}>{CONTACT.phone}</a>
+            <a href={CONTACT.instagramUrl} target="_blank" rel="noopener noreferrer">{CONTACT.instagram}</a>
             <span>{t.address}</span>
           </div>
         </div>
