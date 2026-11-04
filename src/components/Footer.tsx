@@ -1,8 +1,8 @@
 import Link from "next/link";
 import Logo from "./Logo";
-import { Instagram } from "./Icons";
+import { Instagram, WhatsApp } from "./Icons";
 import { href, type Locale, type PageKey } from "@/content/routes";
-import { CONTACT, getDictionary } from "@/content";
+import { CONTACT, getDictionary, WHATSAPP_URL } from "@/content";
 
 const PAGES: PageKey[] = ["about", "production", "products", "references", "contact"];
 
@@ -25,9 +25,14 @@ export default function Footer({ locale }: { locale: Locale }) {
             <h2>{t.contact}</h2>
             <a href={`mailto:${CONTACT.email}`}>{CONTACT.email}</a>
             <a href={CONTACT.phoneHref}>{CONTACT.phone}</a>
-            <a className="social-icon" href={CONTACT.instagramUrl} target="_blank" rel="noopener noreferrer" aria-label={`Instagram ${CONTACT.instagram}`}>
-              <Instagram size={20} />
-            </a>
+            <div className="social-row">
+              <a className="social-icon" href={CONTACT.instagramUrl} target="_blank" rel="noopener noreferrer" aria-label={`Instagram ${CONTACT.instagram}`}>
+                <Instagram size={20} />
+              </a>
+              <a className="social-icon" href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" aria-label={`WhatsApp ${CONTACT.phone}`}>
+                <WhatsApp size={20} />
+              </a>
+            </div>
             <span>{t.address}</span>
           </div>
         </div>

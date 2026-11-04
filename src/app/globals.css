@@ -128,7 +128,8 @@ html[data-docked="true"] .site-header.is-overlay .site-header__logo,
 .site-footer__col { display: flex; flex-direction: column; gap: 4px; font-size: 14px; color: var(--ink-2); }
 .site-footer__col h2 { margin: 0 0 8px; font-size: 12px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted-2); }
 .site-footer__col a, .site-footer__col span { min-height: 32px; display: flex; align-items: center; color: var(--ink-2); }
-.site-footer__col a.social-icon { width: 44px; height: 44px; margin-left: -12px; justify-content: center; border-radius: 999px; color: var(--ink-2); transition: color 200ms ease, background-color 200ms ease; }
+.social-row { display: flex; gap: 4px; margin-left: -12px; }
+.site-footer__col a.social-icon { width: 44px; height: 44px; justify-content: center; border-radius: 999px; color: var(--ink-2); transition: color 200ms ease, background-color 200ms ease; }
 @media (hover: hover) and (pointer: fine) { .site-footer__col a.social-icon:hover { color: var(--ink); background-color: rgba(22, 21, 20, 0.06); } }
 .site-footer__bottom { max-width: 1200px; margin: 0 auto; padding: 20px var(--gutter) calc(40px + env(safe-area-inset-bottom, 0px)); display: flex; flex-wrap: wrap; justify-content: space-between; gap: 16px; font-size: 13px; color: var(--muted-2); box-shadow: 0 -1px 0 rgba(22, 21, 20, 0.06); }
 .site-footer__bottom nav { display: flex; flex-wrap: wrap; gap: 24px; }
