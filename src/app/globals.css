@@ -337,6 +337,8 @@ html[data-docked="true"] .site-header.is-overlay .site-header__logo,
 .product { display: flex; flex-direction: column; border-radius: 28px; overflow: hidden; background: var(--card); color: var(--ink); box-shadow: 0 1px 0 rgba(22, 21, 20, 0.04); }
 .product__stage { position: relative; height: 300px; background: #ece8e0; display: flex; align-items: center; justify-content: center; overflow: hidden; }
 .product__stage > .art { transition: transform 500ms var(--ease-out); }
+@keyframes card-in { from { opacity: 0; transform: translateY(14px) scale(0.985); } to { opacity: 1; transform: none; } }
+.product--enter { animation: card-in 480ms var(--ease-out) both; }
 @media (hover: hover) and (pointer: fine) { .product:hover .product__stage > .art { transform: translateY(-6px) scale(1.02); } }
 .product__body { padding: 24px 28px 28px; display: flex; flex-direction: column; gap: 6px; }
 .product__cat { font-size: 12px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); }
@@ -396,6 +398,7 @@ html[data-docked="true"] .site-header.is-overlay .site-header__logo,
   .marquee__track { animation: none; }
   .layer, .layer *, .prod-step, .reflogo { transition-duration: 1ms !important; transition-delay: 0ms !important; }
   .lift:hover, .product:hover .product__stage > .art { transform: none; }
+  .product--enter { animation-name: fadeonly; animation-duration: 200ms; }
 }
 
 .hide-touch { }

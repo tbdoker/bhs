@@ -36,8 +36,9 @@ export default function ProductGrid({ filterLabel, cats, items }: { filterLabel:
         {CATS.map((c) => <button key={c} type="button" aria-pressed={cat === c} onClick={(e) => pick(c, e.currentTarget)}>{cats[c]}</button>)}
       </div>
       <div className="products" aria-live="polite">
-        {shown.map(({ id, cat: c }) => (
-          <article key={id} className="product">
+        {/* Keyed by category so the cards re-enter in a short cascade whenever the filter changes */}
+        {shown.map(({ id, cat: c }, i) => (
+          <article key={`${cat}-${id}`} className="product product--enter" style={{ animationDelay: `${i * 45}ms` }}>
             <div className="product__stage" aria-hidden>
               <Grain />
               <ProductArt id={id} />

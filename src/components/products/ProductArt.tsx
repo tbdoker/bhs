@@ -21,7 +21,7 @@ export default function ProductArt({ id }: { id: ProductId }) {
       );
     case "letter":
       return (
-        <div className="art shadow-md" style={{ width: 150, height: 212, background: "#fff", borderRadius: 2, padding: "18px 16px", display: "flex", flexDirection: "column", gap: 6, transform: "rotate(-3deg)" }}>
+        <div className="art shadow-md" style={{ width: 150, height: 212, background: "#fff", borderRadius: 2, padding: "18px 16px", display: "flex", flexDirection: "column", gap: 6, rotate: "-3deg" }}>
           <span style={{ marginBottom: 18 }}><Mark w={45} color="#161514" /></span>
           {["50%", "100%", "100%", "80%"].map((w, i) => <div key={i} style={{ height: 3, width: w, background: "#E2DDD3" }} />)}
           <div style={{ marginTop: "auto", height: 2, width: "30%", background: "#7E5326" }} />
@@ -29,7 +29,7 @@ export default function ProductArt({ id }: { id: ProductId }) {
       );
     case "envelope":
       return (
-        <div className="art" style={{ width: 230, height: 120, borderRadius: 3, background: "#EFEBE4", overflow: "hidden", boxShadow: "0 22px 34px -18px rgba(22,21,20,0.45)", transform: "rotate(-4deg)" }}>
+        <div className="art" style={{ width: 230, height: 120, borderRadius: 3, background: "#EFEBE4", overflow: "hidden", boxShadow: "0 22px 34px -18px rgba(22,21,20,0.45)", rotate: "-4deg" }}>
           <div style={abs({ inset: 0, background: "#E3DED5", clipPath: "polygon(0 0, 100% 0, 50% 56%)" })} />
           <span style={abs({ right: 16, bottom: 12 })}><Mark w={45} color="#161514" /></span>
         </div>
@@ -46,7 +46,7 @@ export default function ProductArt({ id }: { id: ProductId }) {
       );
     case "notebook":
       return (
-        <div className="art shadow-md" style={{ width: 150, height: 200, borderRadius: 4, background: "#C4A27A", display: "flex", alignItems: "center", justifyContent: "center", transform: "rotate(4deg)" }}>
+        <div className="art shadow-md" style={{ width: 150, height: 200, borderRadius: 4, background: "#C4A27A", display: "flex", alignItems: "center", justifyContent: "center", rotate: "4deg" }}>
           <div style={abs({ left: 12, right: 12, top: 10, display: "flex", justifyContent: "space-between" })}>
             {Array.from({ length: 6 }, (_, i) => <span key={i} style={{ width: 6, height: 6, borderRadius: "50%", background: "#8E7150" }} />)}
           </div>
