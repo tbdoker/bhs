@@ -17,7 +17,7 @@ const en: Dictionary = {
   },
   footer: {
     tagline: "Paper, print and packaging.", pages: "Pages", contact: "Contact",
-    address: "[Address], Istanbul",
+    address: "Istanbul",
     legal: "Legal", privacy: "Privacy notice", cookies: "Cookie preferences",
   },
   home: {
@@ -110,7 +110,7 @@ const en: Dictionary = {
     message: "Your message", kvkkBefore: "I have read the ", kvkkLink: "privacy notice", kvkkAfter: " and agree to my details being processed for this request.",
     send: "Send", thanksTitle: "Your message is on its way.", thanksSub: "We'll get back to you as soon as possible.", again: "Write another message",
     labels: { email: "Email", phone: "Phone", instagram: "Instagram" },
-    info: [["Address", "[Address], Istanbul"], ["Opening hours", "[Hours]"]],
+    info: [["Address", "Istanbul"], ["Opening hours", "[Hours]"]],
     whatsapp: "Message us on WhatsApp", map: "Map · location to be added",
   },
 };
