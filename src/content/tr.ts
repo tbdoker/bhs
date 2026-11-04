@@ -110,8 +110,8 @@ const tr: Dictionary = {
     message: "Mesajınız", kvkkBefore: "", kvkkLink: "KVKK Aydınlatma Metni", kvkkAfter: "'ni okudum, bilgilerimin bu talep için işlenmesini kabul ediyorum.",
     send: "Gönder", thanksTitle: "Mesajınız ulaştı.", thanksSub: "En kısa sürede size dönüş yapacağız.", again: "Yeni mesaj yaz",
     labels: { email: "E-posta", phone: "Telefon", instagram: "Instagram" },
-    info: [["Adres", "İstanbul"], ["Çalışma saatleri", "[Saatler]"]],
-    whatsapp: "WhatsApp'tan yazın", map: "Harita · konum eklenecek",
+    info: [["Adres", "İstanbul"]],
+    whatsapp: "WhatsApp'tan yazın", map: "İstanbul haritası", mapCity: "İstanbul", mapOpen: "Haritada aç",
   },
 };
 

@@ -380,7 +380,14 @@ html[data-docked="true"] .site-header.is-overlay .site-header__logo,
 .info-card dd { margin: 4px 0 0; font-size: 18px; font-weight: 500; letter-spacing: -0.01em; }
 .info-link { color: var(--ink); text-decoration: underline; text-decoration-color: rgba(22, 21, 20, 0.2); text-underline-offset: 4px; transition: text-decoration-color 200ms ease; }
 @media (hover: hover) and (pointer: fine) { .info-link:hover { color: var(--ink); text-decoration-color: var(--accent); } }
-.map-ph { position: relative; height: 260px; border-radius: 28px; overflow: hidden; background: #e6e2da; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px; font-size: 13px; color: var(--muted); }
+.map-box { position: relative; display: block; height: 260px; border-radius: 28px; overflow: hidden; background: #e6e2da; color: var(--ink); box-shadow: 0 1px 0 rgba(22, 21, 20, 0.04); }
+.map-box iframe { position: absolute; inset: -40px; width: calc(100% + 80px); height: calc(100% + 80px); border: 0; pointer-events: none; filter: grayscale(1) contrast(0.92) brightness(1.04) sepia(0.12); }
+.map-box__label { position: absolute; left: 16px; bottom: 16px; display: inline-flex; align-items: center; gap: 8px; height: 40px; padding: 0 16px; border-radius: 999px; background: rgba(255, 255, 255, 0.9); -webkit-backdrop-filter: blur(12px); backdrop-filter: blur(12px); box-shadow: 0 6px 20px -8px rgba(22, 21, 20, 0.35); font-size: 14px; }
+.map-box__label b { font-weight: 600; }
+.map-box__label span { color: var(--muted); }
+.map-box:active .map-box__label { transform: scale(0.97); }
+.map-box__label { transition: transform 160ms var(--ease-out); }
+@media (hover: hover) and (pointer: fine) { .map-box:hover { color: var(--ink); } .map-box:hover .map-box__label span { color: var(--accent); } }
 @media (max-width: 560px) { .form-grid { grid-template-columns: minmax(0, 1fr); } .contact__form { padding: 28px 22px; } }
 
 /* ───────────────────────── Reduced motion ───────────────────────── */

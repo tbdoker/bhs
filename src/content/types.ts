@@ -40,6 +40,6 @@ export interface Dictionary {
     name: string; company: string; email: string; phone: string; topic: string; topics: string[]; message: string;
     kvkkBefore: string; kvkkLink: string; kvkkAfter: string;
     send: string; thanksTitle: string; thanksSub: string; again: string;
-    labels: { email: string; phone: string; instagram: string }; info: Pair[]; whatsapp: string; map: string;
+    labels: { email: string; phone: string; instagram: string }; info: Pair[]; whatsapp: string; map: string; mapCity: string; mapOpen: string;
   };
 }
