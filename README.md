@@ -59,7 +59,20 @@ Other things you'll want to edit:
 
 ## Put it online
 
-The simplest option is [Vercel](https://vercel.com): import this GitHub repository, keep the defaults, and add your domain. Set `NEXT_PUBLIC_SITE_URL` to the live address (for example `https://bhs.com.tr`) so search engines get the right language links.
+### Preview for client feedback (Vercel)
+
+Import this GitHub repository on [Vercel](https://vercel.com/new) and keep the defaults. Every push to `main` redeploys automatically.
+
+The preview is hidden from search engines (`noindex`) so it never shows up in Google.
+
+### Final launch
+
+At launch, set these environment variables on the server and redeploy:
+
+| Variable | Value |
+| --- | --- |
+| `NEXT_PUBLIC_SITE_URL` | The live address, e.g. `https://bhspackaging.com` |
+| `ALLOW_INDEXING` | `true`, which opens the site to search engines |
 
 ## How it's built
 

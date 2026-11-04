@@ -3,9 +3,21 @@ import "@/app/globals.css";
 import type { Metadata, Viewport } from "next";
 import type { Locale } from "@/content/routes";
 
+/** The live address: set NEXT_PUBLIC_SITE_URL at launch; on Vercel it falls back to the project's own address. */
+const siteUrl =
+  process.env.NEXT_PUBLIC_SITE_URL ??
+  (process.env.VERCEL_PROJECT_PRODUCTION_URL ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}` : "http://localhost:3000");
+
+/**
+ * Search engines stay out until launch: the preview for client feedback must not end up in Google.
+ * Set ALLOW_INDEXING=true on the final server (and redeploy) to open the site to search engines.
+ */
+const allowIndexing = process.env.ALLOW_INDEXING === "true";
+
 export const siteMetadata: Metadata = {
-  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000"),
+  metadataBase: new URL(siteUrl),
   icons: { icon: "/bhs-logo.svg" },
+  robots: allowIndexing ? undefined : { index: false, follow: false, googleBot: { index: false, follow: false } },
 };
 
 /** viewport-fit=cover lets the header pad itself away from the notch; zoom is never disabled. */
