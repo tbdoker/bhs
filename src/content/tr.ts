@@ -57,8 +57,13 @@ const tr: Dictionary = {
     sub: "Her işe aynı soruyla başlıyoruz: bu nesne elde nasıl hissettirecek?",
     photo: "Atölye fotoğrafı veya kısa video · 16:8",
     storyTitle: "Hikâyemiz",
-    story: "BHS, kağıdı yalnızca bir yüzey olarak değil, markaların dokunulabilir bir parçası olarak görür.",
-    storyPlaceholder: "[Şirketin hikâyesi: kuruluş, yolculuk ve bugün nerede olduğunuz. Metin sizden gelecek.]",
+    story: [
+      "BHS Packaging'in hikâyesi, matbaacılık sektörüne duyulan köklü bir ilgi ve yıllara dayanan sektörel deneyimden ilham alarak başladı.",
+      "Matbaacılığın incelikleriyle erken yaşlarda tanışan bu yolculuk, zaman içerisinde kendi vizyonunu ve hedeflerini şekillendiren bağımsız bir girişime dönüştü. Geleneksel matbaacılık kültüründen gelen bilgi ve tecrübeyi modern üretim anlayışıyla bir araya getiren BHS Packaging, bu doğrultuda hayata geçirildi.",
+      "Bugün kalite, güvenilirlik ve müşteri memnuniyetini temel alan yaklaşımımızla, farklı sektörlerin ihtiyaçlarına yönelik baskı ve ambalaj çözümleri sunuyoruz. Üretimin her aşamasında detaylara verdiğimiz önem ve sürekli gelişim anlayışımızla, iş ortaklarımızın beklentilerini karşılamanın ötesine geçmeyi hedefliyoruz.",
+      "Bizim için her ürün, bir markanın kimliğini ve değerini yansıtan önemli bir unsurdur. Bu anlayışla, yalnızca üretim yapan bir firma olmanın ötesinde, müşterilerimiz için uzun vadeli ve güvene dayalı iş ortaklıkları oluşturmayı amaçlıyoruz.",
+    ],
+    motto: "Geçmişin Tecrübesi, Geleceğin Vizyonu.",
     valuesEyebrow: "Değerlerimiz", valuesTitle: "Neye önem veriyoruz?",
     values: [
       ["Zanaat", "Makine ne kadar gelişmiş olursa olsun, son kontrol her zaman bir ustanın gözünden geçer."],

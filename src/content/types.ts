@@ -23,7 +23,7 @@ export interface Dictionary {
   };
   about: {
     eyebrow: string; titleA: string; titleB: string; sub: string; photo: string;
-    storyTitle: string; story: string; storyPlaceholder: string;
+    storyTitle: string; story: string[]; motto: string;
     valuesEyebrow: string; valuesTitle: string; values: Pair[]; ctaTitle: string; ctaBtn: string;
   };
   production: {

@@ -57,8 +57,13 @@ const en: Dictionary = {
     sub: "We start every job with the same question: how will this object feel in the hand?",
     photo: "Workshop photo or short video · 16:8",
     storyTitle: "Our story",
-    story: "BHS sees paper not just as a surface, but as a part of a brand you can touch.",
-    storyPlaceholder: "[Company story: founding, journey and where you are today. Copy to come from you.]",
+    story: [
+      "The story of BHS Packaging began with a deep-rooted passion for printing and years of experience in the industry.",
+      "It started with an early introduction to the finer points of the craft and, over time, grew into an independent venture with its own vision and goals. BHS Packaging was founded to bring the knowledge and experience of traditional printing culture together with a modern approach to production.",
+      "Today, guided by quality, reliability and customer satisfaction, we deliver printing and packaging solutions for the needs of many different industries. With close attention to detail at every stage of production and a commitment to continuous improvement, we aim to go beyond what our partners expect.",
+      "For us, every product is an important expression of a brand's identity and value. That is why we aim to be more than a manufacturer: we build long-term partnerships with our clients, founded on trust.",
+    ],
+    motto: "The experience of the past, the vision of the future.",
     valuesEyebrow: "Our values", valuesTitle: "What we care about.",
     values: [
       ["Craft", "However advanced the machine, the final check always passes a craftsperson's eye."],

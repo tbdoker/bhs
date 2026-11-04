@@ -254,7 +254,9 @@ html[data-docked="true"] .site-header.is-overlay .site-header__logo,
 .story h2 { flex: 1 1 320px; margin: 0; font-size: clamp(36px, 4.4vw, 56px); font-weight: 650; letter-spacing: -0.04em; line-height: 1.05; }
 .story div { flex: 2 1 480px; display: flex; flex-direction: column; gap: 20px; font-size: 19px; line-height: 1.6; color: var(--ink-2); }
 .story p { margin: 0; }
-.story .placeholder { color: var(--soft); }
+/* The first sentence opens a little larger, in full ink; the motto closes the story as a signature line */
+.story .story__lead { font-size: clamp(21px, 2vw, 24px); line-height: 1.45; letter-spacing: -0.015em; color: var(--ink); }
+.story .story__motto { margin-top: 20px; padding-top: 28px; box-shadow: inset 0 1px 0 rgba(22, 21, 20, 0.12); font-size: clamp(24px, 2.6vw, 32px); font-weight: 600; letter-spacing: -0.025em; line-height: 1.2; color: var(--accent); }
 .values { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px; margin-top: 56px; }
 .value { padding: 36px 32px; border-radius: 24px; background: var(--card); min-height: 240px; display: flex; flex-direction: column; }
 .value small { font-size: 13px; font-weight: 600; color: var(--accent); }

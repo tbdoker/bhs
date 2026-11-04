@@ -22,8 +22,8 @@ export default function AboutView({ locale }: { locale: Locale }) {
         <div className="container story">
           <h2>{t.storyTitle}</h2>
           <div>
-            <p>{t.story}</p>
-            <p className="placeholder">{t.storyPlaceholder}</p>
+            {t.story.map((para, i) => <p key={i} className={i === 0 ? "story__lead" : undefined}>{para}</p>)}
+            <p className="story__motto">{t.motto}</p>
           </div>
         </div>
       </section>
