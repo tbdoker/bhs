@@ -50,7 +50,7 @@ const en: Dictionary = {
     ],
     refsEyebrow: "Trusted by", refsLink: "All references",
     ctaA: "Let's talk about", ctaB: "your project.", ctaSub: "Tell us your idea, and we'll choose the right paper and technique together.",
-    ctaBtn: "Get in touch", whatsapp: "Message us on WhatsApp",
+    ctaBtn: "Get in touch", whatsapp: "Message us on WhatsApp", instagram: "Message us on Instagram",
   },
   about: {
     eyebrow: "About Us", titleA: "A print house that", titleB: "respects paper.",

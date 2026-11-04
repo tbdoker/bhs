@@ -50,7 +50,7 @@ const tr: Dictionary = {
     ],
     refsEyebrow: "Bize güvenenler", refsLink: "Tüm referanslar",
     ctaA: "Projenizi", ctaB: "konuşalım.", ctaSub: "Fikrinizi anlatın; size en uygun kağıdı ve tekniği birlikte seçelim.",
-    ctaBtn: "İletişime geçin", whatsapp: "WhatsApp'tan yazın",
+    ctaBtn: "İletişime geçin", whatsapp: "WhatsApp'tan yazın", instagram: "Instagram'dan yazın",
   },
   about: {
     eyebrow: "Hakkımızda", titleA: "Kağıda saygı duyan", titleB: "bir matbaa.",

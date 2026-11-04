@@ -1,3 +1,9 @@
+import { siInstagram } from "simple-icons";
+
+export const Instagram = ({ size = 18 }: { size?: number }) => (
+  <svg width={size} height={size} viewBox="0 0 24 24" fill="currentColor" aria-hidden><path d={siInstagram.path} /></svg>
+);
+
 const base = { fill: "none", stroke: "currentColor", strokeLinecap: "round" as const, strokeLinejoin: "round" as const, "aria-hidden": true };
 
 export const Chevron = ({ size = 14 }: { size?: number }) => (

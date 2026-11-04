@@ -1,6 +1,6 @@
 import Link from "next/link";
-import { siInstagram } from "simple-icons";
 import Logo from "./Logo";
+import { Instagram } from "./Icons";
 import { href, type Locale, type PageKey } from "@/content/routes";
 import { CONTACT, getDictionary } from "@/content";
 
@@ -26,7 +26,7 @@ export default function Footer({ locale }: { locale: Locale }) {
             <a href={`mailto:${CONTACT.email}`}>{CONTACT.email}</a>
             <a href={CONTACT.phoneHref}>{CONTACT.phone}</a>
             <a className="social-icon" href={CONTACT.instagramUrl} target="_blank" rel="noopener noreferrer" aria-label={`Instagram ${CONTACT.instagram}`}>
-              <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden><path d={siInstagram.path} /></svg>
+              <Instagram size={20} />
             </a>
             <span>{t.address}</span>
           </div>

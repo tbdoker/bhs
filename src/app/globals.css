@@ -410,3 +410,8 @@ html[data-docked="true"] .site-header.is-overlay .site-header__logo,
   .site-header__logo svg { width: 96px; }
   .lang a { min-width: 40px; padding: 0 10px; }
 }
+
+/* Stacked buttons on phones share one width instead of three different ones */
+@media (max-width: 520px) {
+  .btn-row { flex-direction: column; align-items: stretch; max-width: 320px; margin-left: auto; margin-right: auto; }
+}

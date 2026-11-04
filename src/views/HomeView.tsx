@@ -5,8 +5,8 @@ import HeroCard from "@/components/home/HeroCard";
 import Finishes from "@/components/home/Finishes";
 import Statement from "@/components/home/Statement";
 import LogoStrip from "@/components/home/LogoStrip";
-import { Chat, Chevron } from "@/components/Icons";
-import { getDictionary, WHATSAPP_URL } from "@/content";
+import { Chat, Chevron, Instagram } from "@/components/Icons";
+import { CONTACT, getDictionary, WHATSAPP_URL } from "@/content";
 import { href, type Locale } from "@/content/routes";
 
 /** Small drawings of each product family, every one carrying the BHS mark. */
@@ -79,6 +79,7 @@ export default function HomeView({ locale }: { locale: Locale }) {
         <div className="btn-row">
           <Link className="btn btn--dark" href={href("contact", locale)}>{t.ctaBtn}</Link>
           <a className="btn btn--ghost" href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer"><Chat />{t.whatsapp}</a>
+          <a className="btn btn--ghost" href={CONTACT.instagramDm} target="_blank" rel="noopener noreferrer"><Instagram />{t.instagram}</a>
         </div>
       </section>
     </PageShell>

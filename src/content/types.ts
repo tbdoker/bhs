@@ -19,7 +19,7 @@ export interface Dictionary {
     finEyebrow: string; finA: string; finB: string; finSub: string; finishes: Record<FinishId, Pair>;
     prodEyebrow: string; prodLink: string; statement: StatementSegment[];
     refsEyebrow: string; refsLink: string;
-    ctaA: string; ctaB: string; ctaSub: string; ctaBtn: string; whatsapp: string;
+    ctaA: string; ctaB: string; ctaSub: string; ctaBtn: string; whatsapp: string; instagram: string;
   };
   about: {
     eyebrow: string; titleA: string; titleB: string; sub: string; photo: string;

@@ -20,5 +20,7 @@ export const CONTACT = {
   phoneHref: "tel:+905452646589",
   instagram: "@bhs.packaging",
   instagramUrl: "https://www.instagram.com/bhs.packaging/",
+  /** Opens a direct-message chat with the account (in the app on phones) */
+  instagramDm: "https://ig.me/m/bhs.packaging",
 };
 export const WHATSAPP_URL = "https://wa.me/905452646589";
