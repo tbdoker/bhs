@@ -19,7 +19,8 @@ export const siteViewport: Viewport = {
 
 export default function RootDocument({ locale, children }: { locale: Locale; children: React.ReactNode }) {
   return (
-    <html lang={locale}>
+    // The film script sets data attributes on <html> before React hydrates; that is intended
+    <html lang={locale} suppressHydrationWarning>
       <body>{children}</body>
     </html>
   );

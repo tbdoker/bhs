@@ -30,6 +30,14 @@ npm run dev:phone
 
 Find your computer's address on the Wi-Fi (macOS: System Settings → Wi-Fi → Details → IP address), then on a phone **on the same Wi-Fi** open `http://THAT-ADDRESS:3000`.
 
+Next.js only lets other devices load its development scripts from allowed addresses. Home and office networks (`192.168.x.x`, `10.x.x.x`, `172.x.x.x`) are already allowed in `next.config.ts`. If your address looks different, add it when starting:
+
+```bash
+DEV_ORIGINS="100.64.*.*" npm run dev:phone
+```
+
+If the page loads on the phone but the intro logo doesn't dock and nothing animates, this is the reason: restart the dev server after changing it.
+
 ## Changing the words
 
 All copy is in two files, one per language:

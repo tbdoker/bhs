@@ -6,6 +6,15 @@ import { ChevronDown } from "../Icons";
 const smooth = (q: number) => q * q * (3 - 2 * q);
 
 /**
+ * Runs during HTML parsing, before React. It sets the header to its over-the-film look at once (no white flash
+ * over the dark video) and keeps it correct on scroll. If the page's JavaScript never loads, this still works,
+ * so the header can't stay transparent over light content. React takes over by setting data-live.
+ */
+const HEADER_BOOT = `(function(){var d=document.documentElement,f=document.querySelector('.film');if(!f)return;
+function u(){if(d.dataset.live)return;var r=f.getBoundingClientRect(),o=r.bottom>72;d.dataset.hero=o?'over':'past';d.dataset.docked=o?'false':'true';}
+u();addEventListener('scroll',u,{passive:true});addEventListener('resize',u);})();`;
+
+/**
  * Full-screen brand film. The big signature writes itself in over the video, then glides up and shrinks
  * into the header slot 1:1 with the scroll. Everything per-frame is written straight to the elements;
  * the header only hears about the two discrete switches, through attributes on <html>.
@@ -22,6 +31,8 @@ export default function Film({ label, scrollLabel, tagline, src, poster }: {
 
   useEffect(() => {
     const root = document.documentElement;
+    root.dataset.live = "1";
+    logoRef.current?.classList.add("is-live");
     const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
     const video = videoRef.current;
@@ -64,28 +75,29 @@ export default function Film({ label, scrollLabel, tagline, src, poster }: {
       window.removeEventListener("scroll", onScroll);
       window.removeEventListener("resize", onScroll);
       cancelAnimationFrame(raf);
-      delete root.dataset.hero; delete root.dataset.docked;
+      delete root.dataset.hero; delete root.dataset.docked; delete root.dataset.live;
     };
   }, []);
 
   return (
     <>
-      <div className="intro-logo" ref={logoRef} aria-hidden>
-        <div className="mark intro-logo__mark" ref={markRef} />
-        <div className="intro-logo__extras" ref={extrasRef}>
-          <div className="intro-logo__rule" />
-          <span className="intro-logo__tagline">{tagline}</span>
-        </div>
-      </div>
       <section className="film" ref={filmRef} aria-label={label}>
         <video ref={videoRef} src={src} poster={poster} preload="auto" autoPlay muted loop playsInline aria-hidden />
         <div className="film__shade" aria-hidden />
         <svg className="grain grain--dark" aria-hidden><rect width="100%" height="100%" filter="url(#grain)" /></svg>
+        <div className="intro-logo" ref={logoRef} aria-hidden>
+          <div className="mark intro-logo__mark" ref={markRef} />
+          <div className="intro-logo__extras" ref={extrasRef}>
+            <div className="intro-logo__rule" />
+            <span className="intro-logo__tagline">{tagline}</span>
+          </div>
+        </div>
         <a className="film__cue" href="#giris" ref={cueRef}>
           <span>{scrollLabel}</span>
           <ChevronDown />
         </a>
       </section>
+      <script dangerouslySetInnerHTML={{ __html: HEADER_BOOT }} />
     </>
   );
 }
