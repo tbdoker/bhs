@@ -5,14 +5,6 @@ import { ChevronDown } from "../Icons";
 
 const smooth = (q: number) => q * q * (3 - 2 * q);
 
-/**
- * Runs during HTML parsing, before React. It sets the header to its over-the-film look at once (no white flash
- * over the dark video) and keeps it correct on scroll. If the page's JavaScript never loads, this still works,
- * so the header can't stay transparent over light content. React takes over by setting data-live.
- */
-const HEADER_BOOT = `(function(){var d=document.documentElement,f=document.querySelector('.film');if(!f)return;
-function u(){if(d.dataset.live)return;var r=f.getBoundingClientRect(),o=r.bottom>72;d.dataset.hero=o?'over':'past';d.dataset.docked=o?'false':'true';}
-u();addEventListener('scroll',u,{passive:true});addEventListener('resize',u);})();`;
 
 /**
  * Full-screen brand film. The big signature writes itself in over the video, then glides up and shrinks
@@ -97,7 +89,6 @@ export default function Film({ label, scrollLabel, tagline, src, poster }: {
           <ChevronDown />
         </a>
       </section>
-      <script dangerouslySetInnerHTML={{ __html: HEADER_BOOT }} />
     </>
   );
 }
