@@ -322,10 +322,18 @@ html[data-docked="true"] .site-header.is-overlay .site-header__logo,
 .is-on .boxes .check { opacity: 1; transform: scale(1); }
 
 /* ───────────────────────── Products ───────────────────────── */
-.filters { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 40px; }
-.filters button { height: 44px; padding: 0 20px; border: 0; border-radius: 999px; font: 500 15px var(--font); background: var(--card); color: var(--ink-2); box-shadow: inset 0 0 0 1px rgba(22, 21, 20, 0.1); cursor: pointer; transition: transform 160ms var(--ease-out), background-color 300ms ease, color 300ms ease; }
+/* One compact segmented bar; on narrow screens it stays on a single line and scrolls sideways */
+.filters { display: flex; width: max-content; max-width: 100%; gap: 2px; padding: 4px; margin-bottom: 40px; border-radius: 999px; background: rgba(22, 21, 20, 0.06); overflow-x: auto; overscroll-behavior-x: contain; scroll-snap-type: x proximity; scrollbar-width: none; }
+.filters::-webkit-scrollbar { display: none; }
+.filters button { flex: none; height: 38px; padding: 0 16px; border: 0; border-radius: 999px; font: 500 14px var(--font); white-space: nowrap; background: transparent; color: var(--muted); cursor: pointer; scroll-snap-align: start; transition: transform 160ms var(--ease-out), background-color 250ms ease, color 250ms ease, box-shadow 250ms ease; }
 .filters button:active { transform: scale(0.97); }
-.filters button[aria-pressed="true"] { background: var(--ink); color: var(--night-text); box-shadow: none; }
+.filters button[aria-pressed="true"] { background: #fff; color: var(--ink); font-weight: 600; box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1), 0 1px 1px rgba(0, 0, 0, 0.04); }
+@media (hover: hover) and (pointer: fine) { .filters button:not([aria-pressed="true"]):hover { color: var(--ink); } }
+@media (max-width: 640px) {
+  .filters { margin-bottom: 28px; -webkit-mask-image: linear-gradient(90deg, #000 82%, transparent); mask-image: linear-gradient(90deg, #000 82%, transparent); }
+  .filters button { padding: 0 14px; }
+  .filters.at-end { -webkit-mask-image: none; mask-image: none; }
+}
 .products { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px; }
 .product { display: flex; flex-direction: column; border-radius: 28px; overflow: hidden; background: var(--card); color: var(--ink); box-shadow: 0 1px 0 rgba(22, 21, 20, 0.04); }
 .product__stage { position: relative; height: 300px; background: #ece8e0; display: flex; align-items: center; justify-content: center; overflow: hidden; }
