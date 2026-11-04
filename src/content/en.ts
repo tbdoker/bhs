@@ -1,0 +1,117 @@
+import type { Dictionary } from "./types";
+
+// Anything in square brackets is a placeholder; replace it here when the real details arrive.
+const en: Dictionary = {
+  meta: {
+    siteName: "BHS",
+    home: { title: "BHS · Paper, Print, Packaging", description: "Discover the grain of paper, the flash of foil and the shadow of an emboss on screen first." },
+    about: { title: "About Us · BHS", description: "A print house that respects paper." },
+    production: { title: "Production · BHS", description: "From idea to delivery, under one roof." },
+    products: { title: "Products · BHS", description: "From business cards to packaging, your brand on every surface." },
+    references: { title: "References · BHS", description: "Brands we make things with." },
+    contact: { title: "Contact · BHS", description: "Let's talk about your project." },
+  },
+  nav: {
+    about: "About Us", production: "Production", products: "Products", references: "References", contact: "Contact",
+    menu: "Main menu", open: "Open menu", close: "Close menu", language: "Language",
+  },
+  footer: {
+    tagline: "Paper, print and packaging.", pages: "Pages", contact: "Contact",
+    email: "[Email]", phone: "[Phone]", address: "[Address], Istanbul",
+    legal: "Legal", privacy: "Privacy notice", cookies: "Cookie preferences",
+  },
+  home: {
+    videoLabel: "Brand film", scroll: "Scroll", tagline: "Paper · Print · Packaging",
+    eyebrow: "BHS Paper & Print", titleA: "Feel it", titleB: "without touching.",
+    sub: "The grain of the paper, the flash of foil, the shadow of an emboss. Discover it all on screen first, then hold it in your hands.",
+    hint: "Move your cursor across the card and watch the light travel over the foil.",
+    cardLabel: "Black business card with hot foil printing", cardName: "Ali Kaya", cardTitle: "Creative Director",
+    lineEyebrow: "Products", lineTitle: "From idea to object.", allProducts: "All products",
+    families: [
+      ["Business cards", "A first impression you can hold."],
+      ["Packaging", "Opening it is an experience."],
+      ["Catalogs & books", "Impressive, page after page."],
+      ["Stationery", "Your identity on every envelope."],
+      ["Labels", "Small, but impossible to miss."],
+    ],
+    finEyebrow: "Finishing", finA: "Prints that", finB: "catch the light.",
+    finSub: "Choose a finish and move your cursor over the card. See how light talks to paper.",
+    finishes: {
+      matte: ["Matte", "No glare, calm and legible. The foundation of everything."],
+      soft: ["Soft-touch", "A thin laminate with a velvet feel. Hard to put down."],
+      foil: ["Hot foil", "A metallic layer transferred with heat and pressure. It flashes as the light moves."],
+      uv: ["Spot UV", "Gloss details on a matte ground. Revealed only at the right angle."],
+      emboss: ["Embossing", "A die that shapes the paper. Read by its shadow, felt by your fingertips."],
+    },
+    prodEyebrow: "Production", prodLink: "Explore production",
+    statement: [
+      ["When a file reaches us, its journey begins:", 0], ["it's prepared in", 0], ["prepress,", 1], ["comes to colour on", 0], ["press,", 2],
+      ["catches the light in", 0], ["finishing,", 3], ["takes shape in", 0], ["cutting,", 4], ["and passes", 0], ["quality control", 5], ["on its way to your door.", 0],
+    ],
+    refsEyebrow: "Trusted by", refsLink: "All references",
+    ctaA: "Let's talk about", ctaB: "your project.", ctaSub: "Tell us your idea, and we'll choose the right paper and technique together.",
+    ctaBtn: "Get in touch", whatsapp: "Message us on WhatsApp",
+  },
+  about: {
+    eyebrow: "About Us", titleA: "A print house that", titleB: "respects paper.",
+    sub: "We start every job with the same question: how will this object feel in the hand?",
+    photo: "Workshop photo or short video · 16:8",
+    storyTitle: "Our story",
+    story: "BHS sees paper not just as a surface, but as a part of a brand you can touch.",
+    storyPlaceholder: "[Company story: founding, journey and where you are today. Copy to come from you.]",
+    facts: [["[Year]", "Founded"], ["[m²]", "Production floor"], ["[No.]", "People on the team"], ["[No.]", "Projects delivered"]],
+    valuesEyebrow: "Our values", valuesTitle: "What we care about.",
+    values: [
+      ["Craft", "However advanced the machine, the final check always passes a craftsperson's eye."],
+      ["Precision", "Millimetre accuracy in colour, size and cutting. The first proof matches the final delivery."],
+      ["Responsibility", "The right paper, efficient production and on-time delivery."],
+    ],
+    ctaTitle: "See how we make it.", ctaBtn: "Explore production",
+  },
+  production: {
+    eyebrow: "Production", titleA: "From idea to delivery,", titleB: "under one roof.",
+    sub: "The journey of a file becoming a box, a catalog or a business card. Scroll down and follow every stage.",
+    chipMachine: "[Machine]", chipCapacity: "[Capacity]",
+    steps: [
+      ["Prepress", "Your file is prepared for print: colour correction, proofing and plate output. Mistakes are caught here, before they reach paper."],
+      ["Printing", "On offset and digital presses, the same colour and the same sharpness in every run."],
+      ["Finishing", "Foil, spot UV, embossing and lamination. The stage that adds light and texture to print."],
+      ["Cutting & forming", "Die cutting, folding and gluing. This is where a flat sheet becomes a box."],
+      ["Quality & delivery", "Every batch is checked, carefully packed and shipped on time."],
+    ],
+    ctaTitle: "See the results.", ctaBtn: "Browse products",
+  },
+  products: {
+    eyebrow: "Products", titleA: "Your brand,", titleB: "on every surface.",
+    sub: "As an example, every product carries the BHS logo. Let's design together how it will look with your brand.",
+    filterLabel: "Filter by category",
+    cats: { all: "All", cards: "Business cards", stationery: "Stationery", catalogs: "Catalogs", packaging: "Packaging", labels: "Labels" },
+    items: {
+      card: ["Business cards", "With foil, embossing and special papers."],
+      letter: ["Letterhead", "For your corporate correspondence."],
+      envelope: ["Envelopes", "Any size, printed or plain."],
+      catalog: ["Catalogs & brochures", "Tell your products' story page by page."],
+      notebook: ["Notepads", "Embossed covers, spiral or glue bound."],
+      box: ["Boxes", "Magnetic, lidded or folding."],
+      bag: ["Paper bags", "The first impression leaving your store."],
+      label: ["Labels & stickers", "On rolls, sheets or die cut."],
+      invite: ["Invitations", "Special papers for special days."],
+    },
+    ctaTitle: "Can't find what you need?", ctaSub: "Write to us about products not on the list, too.", ctaBtn: "Request a quote",
+  },
+  references: {
+    eyebrow: "References", titleA: "Made", titleB: "together.",
+    ctaTitle: "Be the next one.", ctaBtn: "Get in touch",
+  },
+  contact: {
+    eyebrow: "Contact", titleA: "Let's talk about", titleB: "your project.",
+    formTitle: "Write to us", name: "Full name", company: "Company", email: "Email", phone: "Phone",
+    topic: "Subject", topics: ["I'd like a quote", "Sample request", "General enquiry"],
+    message: "Your message", kvkkBefore: "I have read the ", kvkkLink: "privacy notice", kvkkAfter: " and agree to my details being processed for this request.",
+    send: "Send", thanksTitle: "Your message is on its way.", thanksSub: "We'll get back to you as soon as possible.", again: "Write another message",
+    info: [["Email", "[Email address]"], ["Phone", "[Phone number]"], ["Address", "[Address], Istanbul"], ["Opening hours", "[Hours]"]],
+    whatsapp: "Message us on WhatsApp", map: "Map · location to be added",
+  },
+};
+
+export default en;

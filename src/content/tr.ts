@@ -1,0 +1,117 @@
+import type { Dictionary } from "./types";
+
+// Köşeli parantez içindeki her şey yer tutucudur; gerçek bilgiler geldiğinde burada değiştirin.
+const tr: Dictionary = {
+  meta: {
+    siteName: "BHS",
+    home: { title: "BHS · Kağıt, Baskı, Ambalaj", description: "Kağıdın dokusunu, varağın parıltısını ve kabartmanın gölgesini önce ekranda keşfedin." },
+    about: { title: "Hakkımızda · BHS", description: "Kağıda saygı duyan bir matbaa." },
+    production: { title: "Üretim · BHS", description: "Fikirden teslimata, tek çatı altında." },
+    products: { title: "Ürünler · BHS", description: "Kartvizitten ambalaja, markanız her yüzeyde." },
+    references: { title: "Referanslar · BHS", description: "Birlikte ürettiğimiz markalar." },
+    contact: { title: "İletişim · BHS", description: "Projenizi konuşalım." },
+  },
+  nav: {
+    about: "Hakkımızda", production: "Üretim", products: "Ürünler", references: "Referanslar", contact: "İletişim",
+    menu: "Ana menü", open: "Menüyü aç", close: "Menüyü kapat", language: "Dil",
+  },
+  footer: {
+    tagline: "Kağıt, baskı ve ambalaj.", pages: "Sayfalar", contact: "İletişim",
+    email: "[E-posta]", phone: "[Telefon]", address: "[Adres], İstanbul",
+    legal: "Yasal", privacy: "KVKK Aydınlatma Metni", cookies: "Çerez tercihleri",
+  },
+  home: {
+    videoLabel: "Tanıtım filmi", scroll: "Kaydırın", tagline: "Kağıt · Baskı · Ambalaj",
+    eyebrow: "BHS Kağıt ve Baskı", titleA: "Dokunmadan", titleB: "hissedin.",
+    sub: "Kağıdın dokusu, varağın parıltısı, kabartmanın gölgesi. Hepsini önce ekranda keşfedin, sonra elinize alın.",
+    hint: "Işığın varakta gezinmesi için imleci kartın üzerinde dolaştırın.",
+    cardLabel: "Sıcak varak baskılı siyah kartvizit", cardName: "Ali Kaya", cardTitle: "Kreatif Direktör",
+    lineEyebrow: "Ürünler", lineTitle: "Fikirden nesneye.", allProducts: "Tüm ürünler",
+    families: [
+      ["Kartvizit", "İlk izlenim, elinizde."],
+      ["Ambalaj", "Açılışı başlı başına bir deneyim."],
+      ["Katalog ve kitap", "Sayfa sayfa etkileyici."],
+      ["Kırtasiye", "Kurumsal kimliğiniz, her zarfta."],
+      ["Etiket", "Küçük ama göze çarpan."],
+    ],
+    finEyebrow: "Baskı sonrası", finA: "Işığı yakalayan", finB: "baskılar.",
+    finSub: "Bir yüzey seçin, imleci kartın üzerinde gezdirin. Işığın kağıtla nasıl konuştuğunu görün.",
+    finishes: {
+      matte: ["Mat", "Yansımasız, sakin ve okunaklı. Her şeyin temeli."],
+      soft: ["Soft-touch", "Kadife hissi veren ince bir laminasyon. Elden bırakmak istemeyeceksiniz."],
+      foil: ["Sıcak varak", "Isı ve basınçla aktarılan metalik katman. Işık değdikçe parlar."],
+      uv: ["Selektif lak", "Mat zemin üzerinde parlak detaylar. Ancak doğru açıdan görünür."],
+      emboss: ["Kabartma", "Kağıdı şekillendiren kalıp. Gölgesiyle okunur, parmak ucuyla hissedilir."],
+    },
+    prodEyebrow: "Üretim", prodLink: "Üretimi keşfedin",
+    statement: [
+      ["Bir dosya bize ulaştığında yolculuğu başlar:", 0], ["baskı öncesinde", 1], ["hazırlanır,", 0], ["baskıda", 2], ["renge kavuşur,", 0],
+      ["baskı sonrasında", 3], ["ışığı yakalar,", 0], ["kesimde", 4], ["şekil alır ve", 0], ["kalite kontrolden", 5], ["geçip kapınıza ulaşır.", 0],
+    ],
+    refsEyebrow: "Bize güvenenler", refsLink: "Tüm referanslar",
+    ctaA: "Projenizi", ctaB: "konuşalım.", ctaSub: "Fikrinizi anlatın; size en uygun kağıdı ve tekniği birlikte seçelim.",
+    ctaBtn: "İletişime geçin", whatsapp: "WhatsApp'tan yazın",
+  },
+  about: {
+    eyebrow: "Hakkımızda", titleA: "Kağıda saygı duyan", titleB: "bir matbaa.",
+    sub: "Her işe aynı soruyla başlıyoruz: bu nesne elde nasıl hissettirecek?",
+    photo: "Atölye fotoğrafı veya kısa video · 16:8",
+    storyTitle: "Hikâyemiz",
+    story: "BHS, kağıdı yalnızca bir yüzey olarak değil, markaların dokunulabilir bir parçası olarak görür.",
+    storyPlaceholder: "[Şirketin hikâyesi: kuruluş, yolculuk ve bugün nerede olduğunuz. Metin sizden gelecek.]",
+    facts: [["[Yıl]", "Kuruluş"], ["[m²]", "Üretim alanı"], ["[Sayı]", "Kişilik ekip"], ["[Sayı]", "Tamamlanan iş"]],
+    valuesEyebrow: "Değerlerimiz", valuesTitle: "Neye önem veriyoruz?",
+    values: [
+      ["Zanaat", "Makine ne kadar gelişmiş olursa olsun, son kontrol her zaman bir ustanın gözünden geçer."],
+      ["Hassasiyet", "Renk, ölçü ve kesimde milimetrik doğruluk. İlk numune ile son teslimat aynıdır."],
+      ["Sorumluluk", "Doğru kağıt seçimi, verimli üretim ve zamanında teslimat."],
+    ],
+    ctaTitle: "Nasıl ürettiğimizi görün.", ctaBtn: "Üretimi keşfedin",
+  },
+  production: {
+    eyebrow: "Üretim", titleA: "Fikirden teslimata,", titleB: "tek çatı altında.",
+    sub: "Bir dosyanın kutuya, kataloğa ya da kartvizite dönüşme yolculuğu. Aşağı kaydırın ve her aşamayı izleyin.",
+    chipMachine: "[Makine]", chipCapacity: "[Kapasite]",
+    steps: [
+      ["Baskı öncesi", "Dosyanız baskıya hazırlanır: renk ayarı, prova ve kalıp çıkışı. Hatalar burada, kağıda geçmeden yakalanır."],
+      ["Baskı", "Ofset ve dijital makinelerde, her tirajda aynı renk ve aynı netlik."],
+      ["Baskı sonrası", "Varak, selektif lak, kabartma ve laminasyon. Baskıya ışık ve doku katan aşama."],
+      ["Kesim ve şekillendirme", "Kalıpla kesim, katlama ve yapıştırma. Düz bir tabaka burada kutuya dönüşür."],
+      ["Kalite ve teslimat", "Her parti kontrol edilir, özenle paketlenir ve zamanında yola çıkar."],
+    ],
+    ctaTitle: "Sonuçları görün.", ctaBtn: "Ürünleri inceleyin",
+  },
+  products: {
+    eyebrow: "Ürünler", titleA: "Markanız,", titleB: "her yüzeyde.",
+    sub: "Örnek olarak tüm ürünlerde BHS logosunu kullandık. Sizin markanızla nasıl görüneceğini birlikte tasarlayalım.",
+    filterLabel: "Kategoriye göre filtrele",
+    cats: { all: "Tümü", cards: "Kartvizit", stationery: "Kırtasiye", catalogs: "Katalog", packaging: "Ambalaj", labels: "Etiket" },
+    items: {
+      card: ["Kartvizit", "Varak, kabartma ve özel kağıtlarla."],
+      letter: ["Antetli kağıt", "Kurumsal yazışmalarınız için."],
+      envelope: ["Zarf", "Her ölçüde, baskılı veya baskısız."],
+      catalog: ["Katalog ve broşür", "Ürünlerinizi sayfa sayfa anlatın."],
+      notebook: ["Bloknot", "Kabartma kapaklı, spiralli veya tutkallı."],
+      box: ["Kutu", "Mıknatıslı, kapaklı veya katlamalı."],
+      bag: ["Karton çanta", "Mağazanızdan çıkan ilk izlenim."],
+      label: ["Etiket ve sticker", "Rulo, tabaka, kesimli."],
+      invite: ["Davetiye", "Özel günler için özel kağıtlar."],
+    },
+    ctaTitle: "Aradığınızı göremediniz mi?", ctaSub: "Listede olmayan ürünler için de bize yazın.", ctaBtn: "Teklif isteyin",
+  },
+  references: {
+    eyebrow: "Referanslar", titleA: "Birlikte", titleB: "ürettiklerimiz.",
+    ctaTitle: "Listede siz de olun.", ctaBtn: "İletişime geçin",
+  },
+  contact: {
+    eyebrow: "İletişim", titleA: "Projenizi", titleB: "konuşalım.",
+    formTitle: "Bize yazın", name: "Ad soyad", company: "Firma", email: "E-posta", phone: "Telefon",
+    topic: "Konu", topics: ["Teklif almak istiyorum", "Numune talebi", "Genel bilgi"],
+    message: "Mesajınız", kvkkBefore: "", kvkkLink: "KVKK Aydınlatma Metni", kvkkAfter: "'ni okudum, bilgilerimin bu talep için işlenmesini kabul ediyorum.",
+    send: "Gönder", thanksTitle: "Mesajınız ulaştı.", thanksSub: "En kısa sürede size dönüş yapacağız.", again: "Yeni mesaj yaz",
+    info: [["E-posta", "[E-posta adresi]"], ["Telefon", "[Telefon numarası]"], ["Adres", "[Adres], İstanbul"], ["Çalışma saatleri", "[Saatler]"]],
+    whatsapp: "WhatsApp'tan yazın", map: "Harita · konum eklenecek",
+  },
+};
+
+export default tr;
