@@ -28,14 +28,6 @@ export default function AboutView({ locale }: { locale: Locale }) {
         </div>
       </section>
 
-      <section style={{ paddingTop: 140 }}>
-        <div className="container facts">
-          {t.facts.map(([value, label]) => (
-            <div key={label} className="fact"><b>{value}</b><span>{label}</span></div>
-          ))}
-        </div>
-      </section>
-
       <section className="section">
         <div className="container">
           <p className="eyebrow">{t.valuesEyebrow}</p>

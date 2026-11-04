@@ -10,7 +10,7 @@ const COLOR_BAR = ["#00AEEF", "#EC008C", "#FFE600", "#2B2A29", "#7FD6F7", "#F57F
  * The stage stays pinned while the steps scroll past. A step becomes active as it crosses the middle of the
  * screen, and the stage plays that step's own short animation (all CSS transitions, keyed off `is-on`).
  */
-export default function ProductionStory({ steps, chipMachine, chipCapacity }: { steps: Pair[]; chipMachine: string; chipCapacity: string }) {
+export default function ProductionStory({ steps }: { steps: Pair[] }) {
   const [active, setActive] = useState(0);
   const refs = useRef<(HTMLElement | null)[]>([]);
 
@@ -69,7 +69,6 @@ export default function ProductionStory({ steps, chipMachine, chipCapacity }: { 
             <small>0{i + 1}</small>
             <h2>{name}</h2>
             <p>{desc}</p>
-            <div className="chips"><span>{chipMachine}</span><span>{chipCapacity}</span></div>
           </article>
         ))}
       </div>

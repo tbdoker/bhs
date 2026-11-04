@@ -59,7 +59,6 @@ const en: Dictionary = {
     storyTitle: "Our story",
     story: "BHS sees paper not just as a surface, but as a part of a brand you can touch.",
     storyPlaceholder: "[Company story: founding, journey and where you are today. Copy to come from you.]",
-    facts: [["[Year]", "Founded"], ["[m²]", "Production floor"], ["[No.]", "People on the team"], ["[No.]", "Projects delivered"]],
     valuesEyebrow: "Our values", valuesTitle: "What we care about.",
     values: [
       ["Craft", "However advanced the machine, the final check always passes a craftsperson's eye."],
@@ -71,7 +70,6 @@ const en: Dictionary = {
   production: {
     eyebrow: "Production", titleA: "From idea to delivery,", titleB: "under one roof.",
     sub: "The journey of a file becoming a box, a catalog or a business card. Scroll down and follow every stage.",
-    chipMachine: "[Machine]", chipCapacity: "[Capacity]",
     steps: [
       ["Prepress", "Your file is prepared for print: colour correction, proofing and plate output. Mistakes are caught here, before they reach paper."],
       ["Printing", "On offset and digital presses, the same colour and the same sharpness in every run."],

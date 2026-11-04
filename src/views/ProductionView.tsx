@@ -12,7 +12,7 @@ export default function ProductionView({ locale }: { locale: Locale }) {
       <PageHero eyebrow={t.eyebrow} titleA={t.titleA} titleB={t.titleB} sub={t.sub} />
       <section style={{ paddingTop: 120 }}>
         <div className="container">
-          <ProductionStory steps={t.steps} chipMachine={t.chipMachine} chipCapacity={t.chipCapacity} />
+          <ProductionStory steps={t.steps} />
         </div>
       </section>
       <CtaBlock title={t.ctaTitle}>

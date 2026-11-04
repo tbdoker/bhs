@@ -59,7 +59,6 @@ const tr: Dictionary = {
     storyTitle: "Hikâyemiz",
     story: "BHS, kağıdı yalnızca bir yüzey olarak değil, markaların dokunulabilir bir parçası olarak görür.",
     storyPlaceholder: "[Şirketin hikâyesi: kuruluş, yolculuk ve bugün nerede olduğunuz. Metin sizden gelecek.]",
-    facts: [["[Yıl]", "Kuruluş"], ["[m²]", "Üretim alanı"], ["[Sayı]", "Kişilik ekip"], ["[Sayı]", "Tamamlanan iş"]],
     valuesEyebrow: "Değerlerimiz", valuesTitle: "Neye önem veriyoruz?",
     values: [
       ["Zanaat", "Makine ne kadar gelişmiş olursa olsun, son kontrol her zaman bir ustanın gözünden geçer."],
@@ -71,7 +70,6 @@ const tr: Dictionary = {
   production: {
     eyebrow: "Üretim", titleA: "Fikirden teslimata,", titleB: "tek çatı altında.",
     sub: "Bir dosyanın kutuya, kataloğa ya da kartvizite dönüşme yolculuğu. Aşağı kaydırın ve her aşamayı izleyin.",
-    chipMachine: "[Makine]", chipCapacity: "[Kapasite]",
     steps: [
       ["Baskı öncesi", "Dosyanız baskıya hazırlanır: renk ayarı, prova ve kalıp çıkışı. Hatalar burada, kağıda geçmeden yakalanır."],
       ["Baskı", "Ofset ve dijital makinelerde, her tirajda aynı renk ve aynı netlik."],

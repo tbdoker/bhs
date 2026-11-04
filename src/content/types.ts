@@ -23,11 +23,11 @@ export interface Dictionary {
   };
   about: {
     eyebrow: string; titleA: string; titleB: string; sub: string; photo: string;
-    storyTitle: string; story: string; storyPlaceholder: string; facts: Pair[];
+    storyTitle: string; story: string; storyPlaceholder: string;
     valuesEyebrow: string; valuesTitle: string; values: Pair[]; ctaTitle: string; ctaBtn: string;
   };
   production: {
-    eyebrow: string; titleA: string; titleB: string; sub: string; chipMachine: string; chipCapacity: string;
+    eyebrow: string; titleA: string; titleB: string; sub: string;
     steps: Pair[]; ctaTitle: string; ctaBtn: string;
   };
   products: {
