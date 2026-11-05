@@ -22,8 +22,8 @@ const en: Dictionary = {
   },
   home: {
     videoLabel: "Brand film", scroll: "Scroll", tagline: "Paper · Print · Packaging",
-    eyebrow: "BHS Paper & Print", titleA: "Feel it", titleB: "without touching.",
-    sub: "The grain of the paper, the flash of foil, the shadow of an emboss. Discover it all on screen first, then hold it in your hands.",
+    eyebrow: "BHS Paper & Print", titleA: "Touches that", titleB: "leave a mark",
+    sub: "The natural texture of fine papers and flawless craftsmanship give your designs a strong character from the very first moment.",
     hint: "Move your cursor across the card and watch the light travel over the foil.",
     cardLabel: "Black business card with hot foil printing", cardName: "BHS", cardTitle: "CEO",
     lineEyebrow: "Products", lineTitle: "From idea to object.", allProducts: "All products",

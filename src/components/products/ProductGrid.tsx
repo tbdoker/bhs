@@ -9,7 +9,7 @@ const CATS: ProductCat[] = ["all", "cards", "stationery", "catalogs", "packaging
 const ITEMS: { id: ProductId; cat: Exclude<ProductCat, "all"> }[] = [
   { id: "card", cat: "cards" }, { id: "letter", cat: "stationery" }, { id: "envelope", cat: "stationery" },
   { id: "catalog", cat: "catalogs" }, { id: "notebook", cat: "stationery" }, { id: "box", cat: "packaging" },
-  { id: "bag", cat: "packaging" }, { id: "label", cat: "labels" }, { id: "invite", cat: "cards" },
+  { id: "bag", cat: "packaging" }, { id: "label", cat: "labels" }, { id: "invite", cat: "stationery" },
 ];
 
 export default function ProductGrid({ filterLabel, cats, items }: { filterLabel: string; cats: Record<ProductCat, string>; items: Record<ProductId, Pair> }) {

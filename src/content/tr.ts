@@ -22,8 +22,8 @@ const tr: Dictionary = {
   },
   home: {
     videoLabel: "Tanıtım filmi", scroll: "Kaydırın", tagline: "Kağıt · Baskı · Ambalaj",
-    eyebrow: "BHS Kağıt ve Baskı", titleA: "Dokunmadan", titleB: "hissedin.",
-    sub: "Kağıdın dokusu, varağın parıltısı, kabartmanın gölgesi. Hepsini önce ekranda keşfedin, sonra elinize alın.",
+    eyebrow: "BHS Kağıt ve Baskı", titleA: "İz Bırakan", titleB: "Dokunuşlar",
+    sub: "Seçkin kağıtların doğal dokusu ve kusursuz işçilik detayları; tasarımlarınıza ilk andan itibaren güçlü bir karakter kazandırır.",
     hint: "Işığın varakta gezinmesi için imleci kartın üzerinde dolaştırın.",
     cardLabel: "Sıcak varak baskılı siyah kartvizit", cardName: "BHS", cardTitle: "CEO",
     lineEyebrow: "Ürünler", lineTitle: "Fikirden nesneye.", allProducts: "Tüm ürünler",
