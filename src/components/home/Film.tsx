@@ -4,6 +4,9 @@ import { useEffect, useRef } from "react";
 import { ChevronDown } from "../Icons";
 
 const smooth = (q: number) => q * q * (3 - 2 * q);
+const easeOut = (t: number) => 1 - Math.pow(1 - t, 3);
+/** How long the logo takes to glide into the header when the mobile menu opens (and back when it closes). */
+const MENU_FLIGHT = 380;
 
 
 /**
@@ -34,6 +37,9 @@ export default function Film({ label, scrollLabel, tagline, src, poster }: {
       else video.play().catch(() => {});
     }
 
+    // m: how far the open mobile menu has pulled the logo into the header (0..1), animated on toggle.
+    // The logo follows whichever is further along, the scroll or the menu.
+    let m = 0, mFrom = 0, mTo = 0, mStart = 0, flight = 0;
     let raf = 0;
     let lastOver: boolean | null = null, lastDocked: boolean | null = null;
     const apply = () => {
@@ -42,7 +48,8 @@ export default function Film({ label, scrollLabel, tagline, src, poster }: {
       if (!film || !logo || !mark) return;
       const r = film.getBoundingClientRect();
       const H = r.height;
-      const q = Math.min(1, Math.max(0, -r.top) / (H * 0.55));
+      const scrolled = Math.min(1, Math.max(0, -r.top) / (H * 0.55));
+      const q = Math.max(scrolled, m);
       const e = smooth(q);
       // Dock onto wherever the header logo really is (its size changes on phones, and the notch moves it down)
       const slot = document.querySelector(".site-header__logo svg")?.getBoundingClientRect();
@@ -51,6 +58,10 @@ export default function Film({ label, scrollLabel, tagline, src, poster }: {
       const y = H / 2 + (targetY - H / 2) * e;
       const k = 1 + (targetW / mark.offsetWidth - 1) * e;
       logo.style.transform = `translate(-50%, calc(${y.toFixed(1)}px - 50%)) scale(${k.toFixed(4)})`;
+      // The opened menu turns the header white, so the logo darkens as it arrives there (and stays white over the film)
+      const ink = m > 0 ? smooth(Math.min(1, Math.max(0, (e - 0.7) / 0.3))) : 0;
+      const c = Math.round(255 - (255 - 17) * ink);
+      mark.style.color = ink > 0 ? `rgb(${c},${c},${c})` : "";
       const docked = q >= 0.999;
       logo.style.opacity = docked ? "0" : "1";
       if (extrasRef.current) extrasRef.current.style.opacity = Math.max(0, 1 - q * 2.5).toFixed(3);
@@ -60,12 +71,32 @@ export default function Film({ label, scrollLabel, tagline, src, poster }: {
       if (docked !== lastDocked) { root.dataset.docked = String(docked); lastDocked = docked; }
     };
     const onScroll = () => { if (!raf) raf = requestAnimationFrame(apply); };
+
+    const fly = (now: number) => {
+      const t = Math.min(1, (now - mStart) / MENU_FLIGHT);
+      m = mFrom + (mTo - mFrom) * easeOut(t);
+      apply();
+      flight = t < 1 ? requestAnimationFrame(fly) : 0;
+    };
+    const onMenu = () => {
+      const target = root.dataset.menu === "open" ? 1 : 0;
+      if (target === mTo) return;
+      mTo = target;
+      if (reduce) { m = target; apply(); return; }
+      mFrom = m; mStart = performance.now();
+      if (!flight) flight = requestAnimationFrame(fly);
+    };
+    const menuWatch = new MutationObserver(onMenu);
+    menuWatch.observe(root, { attributes: true, attributeFilter: ["data-menu"] });
+
     apply();
     window.addEventListener("scroll", onScroll, { passive: true });
     window.addEventListener("resize", onScroll, { passive: true });
     return () => {
       window.removeEventListener("scroll", onScroll);
       window.removeEventListener("resize", onScroll);
+      menuWatch.disconnect();
+      cancelAnimationFrame(flight);
       cancelAnimationFrame(raf);
       delete root.dataset.hero; delete root.dataset.docked; delete root.dataset.live;
     };

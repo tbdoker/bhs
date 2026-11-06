@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Logo from "./Logo";
 import { Close, Menu } from "./Icons";
 import { href, type Locale, type PageKey } from "@/content/routes";
@@ -20,6 +20,20 @@ const RIGHT: PageKey[] = ["references", "contact"];
 export default function Header({ locale, page, overlay = false }: Props) {
   const t = getDictionary(locale).nav;
   const [open, setOpen] = useState(false);
+  // True when the big homepage logo still has to glide up into the header before the menu shows
+  const [afterLogo, setAfterLogo] = useState(false);
+
+  // The homepage film listens for this to fly its logo into the header while the menu is open
+  useEffect(() => {
+    const root = document.documentElement;
+    root.dataset.menu = open ? "open" : "closed";
+    return () => { delete root.dataset.menu; };
+  }, [open]);
+
+  const toggle = () => {
+    if (!open) setAfterLogo(overlay && document.documentElement.dataset.docked === "false");
+    setOpen((v) => !v);
+  };
 
   const item = (key: PageKey) => (
     <Link key={key} href={href(key, locale)} className="navlink" aria-current={page === key ? "page" : undefined}>
@@ -34,7 +48,7 @@ export default function Header({ locale, page, overlay = false }: Props) {
         <div className="site-header__side">
           <nav className="navlinks" aria-label={t.menu}>{LEFT.map(item)}</nav>
           <button className="menubtn btn-reset" type="button" aria-expanded={open} aria-controls="mobile-menu"
-            aria-label={open ? t.close : t.open} onClick={() => setOpen((v) => !v)}>
+            aria-label={open ? t.close : t.open} onClick={toggle}>
             {open ? <Close /> : <Menu />}
           </button>
         </div>
@@ -51,7 +65,7 @@ export default function Header({ locale, page, overlay = false }: Props) {
         </div>
       </div>
       {open && (
-        <nav id="mobile-menu" className="mobile-menu" aria-label={t.menu}>
+        <nav id="mobile-menu" className={`mobile-menu${afterLogo ? " mobile-menu--after-logo" : ""}`} aria-label={t.menu}>
           {[...LEFT, ...RIGHT].map((key) => (
             <Link key={key} href={href(key, locale)} aria-current={page === key ? "page" : undefined} onClick={() => setOpen(false)}>
               {t[key as keyof typeof t]}

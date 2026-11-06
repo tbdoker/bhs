@@ -94,7 +94,11 @@ input, textarea, select { font-size: 16px; }
 .lang a { display: inline-flex; align-items: center; justify-content: center; height: 36px; min-width: 44px; padding: 0 12px; border-radius: 999px; font-size: 13px; font-weight: 600; color: var(--muted-2); transition: color 300ms ease, background-color 300ms ease; }
 .lang a[aria-current="true"] { background: #fff; color: #111; box-shadow: 0 1px 2px rgba(0, 0, 0, 0.14); }
 .menubtn { display: none; align-items: center; justify-content: center; width: 44px; height: 44px; margin-left: -10px; border: 0; border-radius: 999px; background: transparent; color: inherit; cursor: pointer; }
-.mobile-menu { position: relative; background: #fff; padding: 8px var(--gutter) 28px; display: flex; flex-direction: column; box-shadow: 0 24px 40px -24px rgba(0, 0, 0, 0.25); }
+.mobile-menu { position: absolute; top: 100%; left: 0; right: 0; max-height: calc(100svh - 100%); overflow-y: auto; background: #fff; padding: 8px var(--gutter) 28px; display: flex; flex-direction: column; box-shadow: 0 24px 40px -24px rgba(0, 0, 0, 0.25); }
+.mobile-menu { animation: menu-in 240ms var(--ease-out) both; }
+/* On the homepage hero the big logo first glides into the header; the menu follows as it lands. */
+.mobile-menu--after-logo { animation-delay: 260ms; }
+@keyframes menu-in { from { opacity: 0; transform: translateY(-8px); } to { opacity: 1; transform: none; } }
 .mobile-menu a { display: flex; align-items: center; min-height: 56px; font-size: 22px; font-weight: 600; letter-spacing: -0.02em; color: #4a4640; box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.08); }
 .mobile-menu a[aria-current="page"] { color: #111; }
 @media (max-width: 900px) { .site-header nav.navlinks { display: none; } .menubtn { display: inline-flex; } }
@@ -114,8 +118,7 @@ html[data-hero="past"] .site-header.is-overlay .lang { background-color: rgba(22
 html[data-hero="past"] .site-header.is-overlay .lang a:not([aria-current="true"]) { color: var(--muted-2); }
 /* While the big intro logo is travelling, the header slot stays empty so the two never overlap */
 .site-header.is-overlay .site-header__logo { opacity: 0; }
-html[data-docked="true"] .site-header.is-overlay .site-header__logo,
-.site-header.is-overlay.is-open .site-header__logo { opacity: 1; }
+html[data-docked="true"] .site-header.is-overlay .site-header__logo { opacity: 1; }
 
 /* ───────────────────────── Footer ───────────────────────── */
 .site-footer { position: relative; background: #fff; box-shadow: 0 -1px 0 var(--hairline); }
@@ -144,8 +147,6 @@ html[data-docked="true"] .site-header.is-overlay .site-header__logo,
 .intro-logo { position: absolute; left: 50%; top: 50%; z-index: 35; pointer-events: none; transform-origin: 50% 50%; transform: translate(-50%, -50%); transition: opacity 200ms ease; }
 /* Pinned to the screen only once the docking script is running */
 .intro-logo.is-live { position: fixed; top: 0; }
-/* The open mobile menu covers the hero, so the big logo steps aside (beats the inline opacity the film writes). */
-html:has(.site-header.is-open) .intro-logo { opacity: 0 !important; }
 .intro-logo__mark { width: min(560px, 78vw); color: #fff; animation: write 1700ms cubic-bezier(0.65, 0, 0.35, 1) 350ms both; }
 .intro-logo__extras { position: absolute; left: 50%; top: 100%; transform: translateX(-50%); margin-top: 28px; display: flex; flex-direction: column; align-items: center; gap: 18px; }
 .intro-logo__rule { width: 64px; height: 1px; background: rgba(255, 255, 255, 0.7); transform-origin: center; animation: drawx 900ms var(--ease-in-out) 1700ms both; }
@@ -404,6 +405,7 @@ html:has(.site-header.is-open) .intro-logo { opacity: 0 !important; }
   .layer, .layer *, .prod-step, .reflogo { transition-duration: 1ms !important; transition-delay: 0ms !important; }
   .lift:hover, .product:hover .product__stage > .art { transform: none; }
   .product--enter { animation-name: fadeonly; animation-duration: 200ms; }
+  .mobile-menu { animation-name: fadeonly; animation-delay: 0ms; }
 }
 
 .hide-touch { }
