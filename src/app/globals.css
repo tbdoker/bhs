@@ -95,10 +95,17 @@ input, textarea, select { font-size: 16px; }
 .lang a[aria-current="true"] { background: #fff; color: #111; box-shadow: 0 1px 2px rgba(0, 0, 0, 0.14); }
 .menubtn { display: none; align-items: center; justify-content: center; width: 44px; height: 44px; margin-left: -10px; border: 0; border-radius: 999px; background: transparent; color: inherit; cursor: pointer; }
 .mobile-menu { position: absolute; top: 100%; left: 0; right: 0; max-height: calc(100svh - 100%); overflow-y: auto; background: #fff; padding: 8px var(--gutter) 28px; display: flex; flex-direction: column; box-shadow: 0 24px 40px -24px rgba(0, 0, 0, 0.25); }
-.mobile-menu { animation: menu-in 240ms var(--ease-out) both; }
-/* On the homepage hero the big logo first glides into the header; the menu follows as it lands. */
-.mobile-menu--after-logo { animation-delay: 260ms; }
-@keyframes menu-in { from { opacity: 0; transform: translateY(-8px); } to { opacity: 1; transform: none; } }
+/* The menu unrolls down from the header bar and the links drop in one after another.
+   On the homepage hero it waits for the big logo to land in the header first. */
+.mobile-menu { --menu-delay: 0ms; animation: menu-down 380ms cubic-bezier(0.32, 0.72, 0, 1) var(--menu-delay) both; }
+.mobile-menu--after-logo { --menu-delay: 260ms; }
+.mobile-menu a { animation: menu-link 420ms var(--ease-out) calc(var(--menu-delay) + 60ms + var(--i, 0) * 40ms) both; }
+.mobile-menu.is-closing { animation: menu-up 200ms cubic-bezier(0.4, 0, 1, 1) both; }
+.mobile-menu.is-closing a { animation: none; }
+/* Negative bottom inset keeps the panel's drop shadow inside the clip */
+@keyframes menu-down { from { clip-path: inset(0 0 100% 0); } to { clip-path: inset(0 0 -60px 0); } }
+@keyframes menu-up { from { clip-path: inset(0 0 -60px 0); } to { clip-path: inset(0 0 100% 0); } }
+@keyframes menu-link { from { opacity: 0; transform: translateY(-10px); } to { opacity: 1; transform: none; } }
 .mobile-menu a { display: flex; align-items: center; min-height: 56px; font-size: 22px; font-weight: 600; letter-spacing: -0.02em; color: #4a4640; box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.08); }
 .mobile-menu a[aria-current="page"] { color: #111; }
 @media (max-width: 900px) { .site-header nav.navlinks { display: none; } .menubtn { display: inline-flex; } }
@@ -405,7 +412,8 @@ html[data-docked="true"] .site-header.is-overlay .site-header__logo { opacity: 1
   .layer, .layer *, .prod-step, .reflogo { transition-duration: 1ms !important; transition-delay: 0ms !important; }
   .lift:hover, .product:hover .product__stage > .art { transform: none; }
   .product--enter { animation-name: fadeonly; animation-duration: 200ms; }
-  .mobile-menu { animation-name: fadeonly; animation-delay: 0ms; }
+  .mobile-menu, .mobile-menu.is-closing { animation: none; }
+  .mobile-menu a { animation: none; }
 }
 
 .hide-touch { }
