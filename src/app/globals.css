@@ -97,10 +97,10 @@ input, textarea, select { font-size: 16px; }
 .mobile-menu { position: absolute; top: 100%; left: 0; right: 0; max-height: calc(100svh - 100%); overflow-y: auto; background: #fff; padding: 8px var(--gutter) 28px; display: flex; flex-direction: column; box-shadow: 0 24px 40px -24px rgba(0, 0, 0, 0.25); }
 /* The menu unrolls down from the header bar and the links drop in one after another.
    On the homepage hero it waits for the big logo to land in the header first. */
-.mobile-menu { --menu-delay: 0ms; animation: menu-down 380ms cubic-bezier(0.32, 0.72, 0, 1) var(--menu-delay) both; }
-.mobile-menu--after-logo { --menu-delay: 260ms; }
-.mobile-menu a { animation: menu-link 420ms var(--ease-out) calc(var(--menu-delay) + 60ms + var(--i, 0) * 40ms) both; }
-.mobile-menu.is-closing { animation: menu-up 200ms cubic-bezier(0.4, 0, 1, 1) both; }
+.mobile-menu { --menu-delay: 0ms; animation: menu-down 580ms cubic-bezier(0.32, 0.72, 0, 1) var(--menu-delay) both; }
+.mobile-menu--after-logo { --menu-delay: 440ms; }
+.mobile-menu a { animation: menu-link 560ms var(--ease-out) calc(var(--menu-delay) + 100ms + var(--i, 0) * 65ms) both; }
+.mobile-menu.is-closing { animation: menu-up 300ms cubic-bezier(0.4, 0, 1, 1) both; }
 .mobile-menu.is-closing a { animation: none; }
 /* Negative bottom inset keeps the panel's drop shadow inside the clip */
 @keyframes menu-down { from { clip-path: inset(0 0 100% 0); } to { clip-path: inset(0 0 -60px 0); } }

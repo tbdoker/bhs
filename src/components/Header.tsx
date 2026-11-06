@@ -39,7 +39,7 @@ export default function Header({ locale, page, overlay = false }: Props) {
     if (open && !closing) {
       setClosing(true);
       const still = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-      closeTimer.current = window.setTimeout(() => { setOpen(false); setClosing(false); }, still ? 0 : 200);
+      closeTimer.current = window.setTimeout(() => { setOpen(false); setClosing(false); }, still ? 0 : 300);
       return;
     }
     if (closing) { window.clearTimeout(closeTimer.current); setAfterLogo(false); setClosing(false); return; } // tapped again mid-close: reopen

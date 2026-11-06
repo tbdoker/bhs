@@ -6,7 +6,7 @@ import { ChevronDown } from "../Icons";
 const smooth = (q: number) => q * q * (3 - 2 * q);
 const easeOut = (t: number) => 1 - Math.pow(1 - t, 3);
 /** How long the logo takes to glide into the header when the mobile menu opens (and back when it closes). */
-const MENU_FLIGHT = 380;
+const MENU_FLIGHT = 620;
 
 
 /**
