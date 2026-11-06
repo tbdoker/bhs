@@ -144,6 +144,8 @@ html[data-docked="true"] .site-header.is-overlay .site-header__logo,
 .intro-logo { position: absolute; left: 50%; top: 50%; z-index: 35; pointer-events: none; transform-origin: 50% 50%; transform: translate(-50%, -50%); transition: opacity 200ms ease; }
 /* Pinned to the screen only once the docking script is running */
 .intro-logo.is-live { position: fixed; top: 0; }
+/* The open mobile menu covers the hero, so the big logo steps aside (beats the inline opacity the film writes). */
+html:has(.site-header.is-open) .intro-logo { opacity: 0 !important; }
 .intro-logo__mark { width: min(560px, 78vw); color: #fff; animation: write 1700ms cubic-bezier(0.65, 0, 0.35, 1) 350ms both; }
 .intro-logo__extras { position: absolute; left: 50%; top: 100%; transform: translateX(-50%); margin-top: 28px; display: flex; flex-direction: column; align-items: center; gap: 18px; }
 .intro-logo__rule { width: 64px; height: 1px; background: rgba(255, 255, 255, 0.7); transform-origin: center; animation: drawx 900ms var(--ease-in-out) 1700ms both; }
