@@ -55,7 +55,7 @@ const tr: Dictionary = {
   about: {
     eyebrow: "Hakkımızda", titleA: "Kağıda saygı duyan", titleB: "bir matbaa.",
     sub: "Her işe aynı soruyla başlıyoruz: bu nesne elde nasıl hissettirecek?",
-    photo: "Atölye fotoğrafı veya kısa video · 16:8",
+    photo: "Atölyemizde kağıt yığınları ve baskı makinesi",
     storyTitle: "Hikâyemiz",
     story: [
       "BHS Packaging'in hikâyesi, matbaacılık sektörüne duyulan köklü bir ilgi ve yıllara dayanan sektörel deneyimden ilham alarak başladı.",

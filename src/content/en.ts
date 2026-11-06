@@ -55,7 +55,7 @@ const en: Dictionary = {
   about: {
     eyebrow: "About Us", titleA: "A print house that", titleB: "respects paper.",
     sub: "We start every job with the same question: how will this object feel in the hand?",
-    photo: "Workshop photo or short video · 16:8",
+    photo: "Stacks of paper and a printing press in our workshop",
     storyTitle: "Our story",
     story: [
       "The story of BHS Packaging began with a deep-rooted passion for printing and years of experience in the industry.",

@@ -1,7 +1,7 @@
 import Link from "next/link";
 import PageShell from "@/components/PageShell";
 import PageHero, { CtaBlock } from "@/components/PageHero";
-import { Grain } from "@/components/Icons";
+import AmbientVideo from "@/components/AmbientVideo";
 import { getDictionary } from "@/content";
 import { href, type Locale } from "@/content/routes";
 
@@ -12,10 +12,7 @@ export default function AboutView({ locale }: { locale: Locale }) {
       <PageHero eyebrow={t.eyebrow} titleA={t.titleA} titleB={t.titleB} sub={t.sub} />
 
       <div className="container">
-        <div className="photo-ph" role="img" aria-label={t.photo}>
-          <Grain dark />
-          <span>{t.photo}</span>
-        </div>
+        <AmbientVideo className="photo-ph photo-ph--film" src="/media/about-film.mp4" poster="/media/about-poster.jpg" label={t.photo} />
       </div>
 
       <section className="section">
